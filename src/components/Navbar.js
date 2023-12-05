@@ -4,24 +4,25 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="bg-white shadow-md shadow-gray-400 h-20 justify-center">
-      <div className="flex justify-between px-4">
+      <div className="flex justify-between">
+      {/* logo */}
         <div className="logo flex">
           <img
             class="w-28 p-1 h-20"
             src="/image\4b6c719135bdd5ce80597c96336a840c-removebg-preview.png"
             alt="Image 1"
           />
-          <label className="pt-6 font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-700 text-xl">
+          <label className="mt-6 font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-600 text-xl">
             EMPIRES
           </label>
         </div>
-
-        {/* <ul className="nav font-bold pt-6 h-12 justify-center text-center flex w-80 gap-6">
+{/* pages */}
+        <ul className="nav font-bold mt-6 h-12 justify-center text-center flex w-80 gap-6">
           <li className="home">Home</li>
           <li className="about">about</li>
           <li className="contect">contect us</li>
         </ul>
-
+{/* search */}
         <div className="pt-6 h-12 justify-center">
           <input
             type="search"
@@ -29,12 +30,12 @@ const Navbar = () => {
             placeholder="Search in Empires"
           />
         </div>
-
-        <ul className="flex font-bold pt-6 justify-end gap-5">
+{/* cart + login */}
+        <ul className="flex font-bold mt-6 justify-end gap-5">
           <li className="cart">
             <div class=" bg-white flex ">
               <div class="relative">
-                <div class="t-0 absolute left-3">
+                <div class="absolute left-3">
                   <p class="flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                     3
                   </p>
@@ -56,6 +57,7 @@ const Navbar = () => {
             <Link to="/">Login</Link>
           </li>
           <li>
+          {/* profile */}
             <div className="w-12 h-12 rounded-full">
               <img
                 className="w-12 h-12 p-1 rounded-full"
@@ -64,7 +66,7 @@ const Navbar = () => {
               />
             </div>
           </li>
-        </ul> */}
+        </ul>
       </div>
     </div>
   );

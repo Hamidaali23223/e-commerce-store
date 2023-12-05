@@ -16,7 +16,7 @@ const Login = () => {
   });
 
   return (
-    <div className="container bg-gradient-to-r from-rose-600 via-fuchsia-600 to-indigo-700 h-[100%]  flex justify-center">
+    <div className="bg-gradient-to-r from-rose-600 via-fuchsia-600 to-indigo-700 h-[100%]  flex justify-center">
       <Formik
         initialValues={{
           name: "",

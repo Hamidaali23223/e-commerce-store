@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 const product = () => {
   return (
-    <section>
-      <div className="container h-[100%] bg-gray-200">
+    <section className="mx-2.5 h-[100%] bg-gray-200 ">
+    
         {/* header */}
         <Navbar />
         <div className="main">
@@ -291,7 +291,7 @@ const product = () => {
             </div>
           </div>
         </div>
-      </div>
+      
     </section>
   );
 };
