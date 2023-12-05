@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="bg-white shadow-md shadow-gray-400 h-20 justify-center">
       <div className="flex justify-between">
-      {/* logo */}
+        {/* logo */}
         <div className="logo flex">
           <img
             class="w-28 p-1 h-20"
@@ -16,13 +16,13 @@ const Navbar = () => {
             EMPIRES
           </label>
         </div>
-{/* pages */}
-        <ul className="nav font-bold mt-6 h-12 justify-center text-center flex w-80 gap-6">
+
+        {/* <ul className="nav font-bold mt-6 h-12 justify-center text-center flex w-80 gap-6">
           <li className="home">Home</li>
           <li className="about">about</li>
           <li className="contect">contect us</li>
         </ul>
-{/* search */}
+
         <div className="pt-6 h-12 justify-center">
           <input
             type="search"
@@ -30,7 +30,7 @@ const Navbar = () => {
             placeholder="Search in Empires"
           />
         </div>
-{/* cart + login */}
+
         <ul className="flex font-bold mt-6 justify-end gap-5">
           <li className="cart">
             <div class=" bg-white flex ">
@@ -57,7 +57,6 @@ const Navbar = () => {
             <Link to="/">Login</Link>
           </li>
           <li>
-          {/* profile */}
             <div className="w-12 h-12 rounded-full">
               <img
                 className="w-12 h-12 p-1 rounded-full"
@@ -66,7 +65,7 @@ const Navbar = () => {
               />
             </div>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );
