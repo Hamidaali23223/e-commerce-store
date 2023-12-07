@@ -17,7 +17,7 @@ const Navbar = () => {
           </label>
         </div>
 
-        {/* <ul className="nav font-bold mt-6 h-12 justify-center text-center flex w-80 gap-6">
+        <ul className="nav font-bold mt-6 h-12 justify-center text-center flex w-80 gap-6">
           <li className="home">Home</li>
           <li className="about">about</li>
           <li className="contect">contect us</li>
@@ -65,7 +65,7 @@ const Navbar = () => {
               />
             </div>
           </li>
-        </ul> */}
+        </ul>
       </div>
     </div>
   );
