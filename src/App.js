@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Rating, Typography } from "@material-tailwind/react";
 import AllProducts from "./pages/AllProductsPage";
 import Product from "./pages/product";
+import Register from "./pages/ItemPost";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/allProducts" element={<AllProducts />} />
           <Route path="/product" element={<Product />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </>

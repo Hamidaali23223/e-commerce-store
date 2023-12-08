@@ -36,7 +36,7 @@ const Login = () => {
         {({ values, errors, touched, handleChange }) => (
           <Form className="flex justify-center flex-col mt-10 bg-gray-300 rounded-md shadow-2xl shadow-gray-600 gap-2 p-8 w-[40vw]">
             <h1 className="text-5xl text-black text-center mb-10 font-bold">
-              Login page
+              Welcome to Empires! Please login.
             </h1>
             {/* Name */}
             <label className="">Name</label>

@@ -1,11 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GrAtm } from "react-icons/gr";
 import { Rating, Typography } from "@material-tailwind/react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CustomRating from "../components/CustomRating";
+import { toast } from "react-toastify";
 const Product = () => {
-  const [rated, setRated] = React.useState(4);
+  const [rated, setRated] = useState(4);
+  const [count, setCount] = useState(1);
+  const [data, setData] = useState([1]);
+  const [image, setImage] = useState(
+    "https://static-01.daraz.pk/p/69d2768a31963b68e04e964bf685a01f.jpg_750x750.jpg_.webp"
+  );
+  const increment = () => {
+    setData([...data, 1]);
+    if (count < 3) {
+      setCount(count + 1);
+    } else {
+      toast.warn("We are out of stock sorry!!!");
+    }
+  };
+
+  const decrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+
   return (
     <section className="h-[100%] bg-gray-200 ">
       {/* header */}
@@ -14,11 +35,7 @@ const Product = () => {
         {/* <div className=" m-6 pt-4 bg-white grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3"> */}
         {/* count 1 */}
         <div className="card gap-1 w-96">
-          <img
-            className="rounded-sm p-2 w-96"
-            src="https://static-01.daraz.pk/p/69d2768a31963b68e04e964bf685a01f.jpg_750x750.jpg_.webp"
-            alt="img 1"
-          />
+          <img className="rounded-sm h-96 p-2 w-96" src={image} alt="img 1" />
           {/* sm img */}
           <hr />
           <div className="">
@@ -42,27 +59,42 @@ const Product = () => {
               <img
                 className="w-14 h-14"
                 src="https://static-01.daraz.pk/p/69d2768a31963b68e04e964bf685a01f.jpg_750x750.jpg_.webp"
-                alt="img1"
+                alt="img4"
+                onClick={() =>
+                  setImage(
+                    "https://static-01.daraz.pk/p/69d2768a31963b68e04e964bf685a01f.jpg_750x750.jpg_.webp"
+                  )
+                }
               />
               <img
                 className="w-14 h-14"
-                src="https://static-01.daraz.pk/p/69d2768a31963b68e04e964bf685a01f.jpg_750x750.jpg_.webp"
+                src="/assets/isolated-black-t-shirt-front-free-png.webp"
                 alt="img2img2"
+                onClick={() =>
+                  setImage("/assets/isolated-black-t-shirt-front-free-png.webp")
+                }
               />
               <img
                 className="w-14 h-14"
-                src="https://static-01.daraz.pk/p/69d2768a31963b68e04e964bf685a01f.jpg_750x750.jpg_.webp"
+                src="/assets/MC3011.png"
                 alt="img3"
+                onClick={() => setImage("/assets/MC3011.png")}
               />
               <img
                 className="w-14 h-14"
-                src="https://static-01.daraz.pk/p/69d2768a31963b68e04e964bf685a01f.jpg_750x750.jpg_.webp"
+                src="/assets/xl-f-zig-zag-box-maroon-prachi-clothe-original-imagchyqgje99fmd.webp"
                 alt="img4"
+                onClick={() =>
+                  setImage(
+                    "/assets/xl-f-zig-zag-box-maroon-prachi-clothe-original-imagchyqgje99fmd.webp"
+                  )
+                }
               />
               <img
                 className="w-14 h-14"
-                src="https://static-01.daraz.pk/p/69d2768a31963b68e04e964bf685a01f.jpg_750x750.jpg_.webp"
-                alt="img4"
+                src="/assets/BLUECREWNECKFRONT_WEB.webp"
+                alt="img1"
+                onClick={() => setImage("/assets/BLUECREWNECKFRONT_WEB.webp")}
               />
               <div className="arrow mt-3">
                 <svg
@@ -157,38 +189,48 @@ const Product = () => {
           <div className="mt-5">
             <span className="flex justify-center gap-5">
               <label className="font-semibold">Quantity</label>
-              <svg
-                class="h-7 w-7 p-1 bg-slate-300"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" />{" "}
-                <line x1="5" y1="12" x2="19" y2="12" />
-              </svg>
-              <div className="numbe">1</div>
-              <svg
-                class="h-7 w-7 bg-slate-300 p-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
+              <button onClick={decrement}>
+                <svg
+                  class="h-7 w-7 p-1 bg-slate-300"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 4v16m8-8H4"
-                />
-              </svg>
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" />{" "}
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+
+              <div className="numbe" id="number">
+                {count}
+              </div>
+
+              <button onClick={increment}>
+                <svg
+                  class="h-7 w-7 bg-slate-300 p-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 4v16m8-8H4"
+                  />
+                </svg>
+              </button>
+
               <label className="text-sm">Only 3 items left</label>
             </span>
             <div className="flex gap-3 mt-2 p-1 justify-center">
               <button className="bg-sky-400 hover:bg-sky-500 w-56 h-12">
                 Buy Now
               </button>
+
               <button className="bg-orange-400 hover:bg-orange-500 w-56 h-12">
                 Add To Cart
               </button>
